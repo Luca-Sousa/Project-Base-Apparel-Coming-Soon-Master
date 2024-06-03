@@ -8,15 +8,35 @@
   
   <title>Project | Base Apparel coming soon page</title>
 
+  <link rel="stylesheet" href="src/output.css">
 </head>
-<body>
+<body class="min-h-screen bg-Linear1 font-JS lg:flex">
 
-  We're coming soon
+  <main class="bg-100-100 lg:w-1/2 lg:bg-bg-Desk lg:bg-no-repeat xl:px-32 xl:w-[55%]">
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
+    <header class="p-10 lg:pt-20 xl:px-0">
+      <img src="images/logo.svg" alt="logo">
+    </header>
 
-  Email Address
+    <div class="pt-72 bg-Img-Mob bg-cover sm:pt-96 lg:hidden"></div>
+  
+    <div class="m-auto text-center px-10 py-16 text-col-Des-Red max-w-md sm:py-12 lg:py-28 xl:text-left xl:max-w-lg xl:px-0 xl:m-0 xl:pb-20">
+      <h2 class="uppercase text-5xl tracking-[0.15em] font-light lg:text-7xl">We're <span class="text-col-Dark-Red font-semibold">coming soon</span></h2>
+      <p class="text-base font-normal pt-5 xl:text-lg">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+    </div>
+
+    <div class="flex justify-center pb-20 sm:pb-10 xl:justify-start">
+      <form class="w-[80%] h-12 flex rounded-full relative sm:max-w-md xl:w-full xl:max-w-lg">
+        <input class="w-full h-full bg-Linear1 border-[1px] border-col-Des-Red rounded-full pl-6 placeholder-col-Des-Red" type="email" placeholder="Email Address">
+        <button type="submit" class="absolute right-0 w-16 h-full flex items-center justify-center bg-Linear2 rounded-full">
+          <img src="images/icon-arrow.svg" alt="icon arrow">
+        </button>
+      </form>
+    </div>
+    
+  </main>
+
+  <div class="w-1/2 h-auto hidden bg-Img-Desk bg-100-100 lg:flex xl:w-[45%]"></div>
   
 </body>
 </html>
