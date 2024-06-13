@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'col-Des-Red': 'hsl(0, 36%, 70%)',
-        'col-Soft-Red': 'hsl(0, 93%, 68%)',
-        'col-Dark-Red': 'hsl(0, 6%, 24%)'
+        'col-DER': 'hsl(0, 36%, 70%)',
+        'col-SR': 'hsl(0, 93%, 68%)',
+        'col-DAR': 'hsl(0, 6%, 24%)'
       },
       fontFamily: {
         'JS':'Josefin Sans'
@@ -20,6 +20,9 @@ module.exports = {
       },
       backgroundSize: {
         '100-100': '100% 100%'
+      },
+      screens: {
+        lxl: '1600px'
       }
     },
   },
