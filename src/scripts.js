@@ -27,6 +27,9 @@ $(function(){
         if (isValid) {
             $('#messageSuccess').removeClass('hidden');
             $('#messageSuccess').addClass('flex animate-move-in');
+            $('#messageSuccess').removeClass('hidden');
+            $('#email').prop('disabled', true);
+            $('#btn').prop('disabled', true);
 
             setTimeout(function() {
                 $('#messageSuccess').removeClass('animate-move-in');
@@ -35,6 +38,8 @@ $(function(){
 
                 setTimeout(function() {
                     $('#messageSuccess').removeClass('animate-move-out');
+                    $('#email').prop('disabled', false);
+                    $('#btn').prop('disabled', false);
                     $('#messageSuccess').removeClass('flex');
                     $('#messageSuccess').addClass('hidden');
                 }, 500);
