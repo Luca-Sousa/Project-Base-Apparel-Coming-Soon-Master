@@ -1,9 +1,13 @@
 $(function(){
 
+    var msgEmpty = $('#messageEmpty');
+    var msgError = $('#messageError');
+    var inputEmail = $('input[name=email]');
+
     $('#email').focus(function(){
-        if ($('#messageEmpty').is(':visible') || $('#messageError').is(':visible')) {
-            $('#messageEmpty').hide();
-            $('#messageError').hide();
+        if (msgEmpty.is(':visible') || msgError.is(':visible')) {
+            msgEmpty.hide();
+            msgError.hide();
         }
         resetInvalidField($(this));
     });
@@ -11,51 +15,48 @@ $(function(){
     $('form').submit(function(event){
         event.preventDefault();
 
-        var email = $('input[name=email]').val();
+        var email = inputEmail.val();
         var isValid = true;
 
         if (email === '') {
-            applyFieldInvalid($('input[name=email]'));
-            $('#messageEmpty').show();
+            applyFieldInvalid(inputEmail);
+            msgEmpty.show();
             isValid = false;
         } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email)) {
-            applyFieldInvalid($('input[name=email]'));
-            $('#messageError').show();
+            applyFieldInvalid(inputEmail);
+            msgError.show();
             isValid = false;
         }
 
         if (isValid) {
-            $('#messageSuccess').removeClass('hidden');
-            $('#messageSuccess').addClass('flex animate-move-in');
-            $('#messageSuccess').removeClass('hidden');
-            $('#email').prop('disabled', true);
-            $('#btn').prop('disabled', true);
+
+            var msmSuccess = $('#messageSuccess');
+            var emailDisabled = $('#email');
+            var btnDisabled = $('#btn');
+
+            msmSuccess.removeClass('hidden').addClass('flex animate-move-in');
+            emailDisabled.prop('disabled', true);
+            btnDisabled.prop('disabled', true);
 
             setTimeout(function() {
-                $('#messageSuccess').removeClass('animate-move-in');
-                $('#messageSuccess').addClass('animate-move-out');
-                $('input[name=email]').val('');
+                msmSuccess.removeClass('animate-move-in').addClass('animate-move-out');
+                inputEmail.val('');
 
                 setTimeout(function() {
-                    $('#messageSuccess').removeClass('animate-move-out');
-                    $('#email').prop('disabled', false);
-                    $('#btn').prop('disabled', false);
-                    $('#messageSuccess').removeClass('flex');
-                    $('#messageSuccess').addClass('hidden');
+                    msmSuccess.removeClass('animate-move-out flex').addClass('hidden');
+                    emailDisabled.prop('disabled', false);
+                    btnDisabled.prop('disabled', false);
                 }, 500);
             }, 7000);
         }
     });
 
     function applyFieldInvalid(el){
-        el.removeClass('border border-gray-200');
-        el.addClass('border-2 border-col-SR');
+        el.removeClass('border border-gray-200').addClass('border-2 border-col-SR');
     }
 
     function resetInvalidField(el){
-        el.removeClass('border-2 border-col-SR');
-        el.addClass('border border-gray-200');
-        el.val('');
+        el.removeClass('border-2 border-col-SR').addClass('border border-gray-200').val('');
     }
     
 });
