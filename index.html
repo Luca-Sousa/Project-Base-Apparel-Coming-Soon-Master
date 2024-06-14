@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/favicon-32x32.png">
   
   <title>Project | Base Apparel coming soon page</title>
 
@@ -12,31 +12,41 @@
 </head>
 <body class="min-h-screen bg-Linear1 font-JS lg:flex">
 
+  <article class="hidden flex-col justify-center fixed  left-1/2 -translate-x-1/2 w-80 h-[6.75rem] p-[1.6rem] rounded-xl gap-3 text-white bg-Linear2 shadow-md shadow-col-DER" id="messageSuccess">
+    <div class="flex items-center gap-3">
+        <img src="src/assets/images/icon-success-check.svg" alt="Icon Success Check" width="20" height="21">
+        <h2 class="h-5 text-lg">Email added successfully!</h2>
+    </div>
+    <p class="text-base tracking-wide">You will soon be notified about our launch announcements and offers.</p>
+  </article>
+
   <main class="bg-100-100 lg:basis-3/5 lg:bg-bg-Desk lg:bg-no-repeat xl:px-32 xl:basis-[55%]">
 
     <header class="p-10 sm:pl-24 lg:pt-20 xl:px-0">
-      <img src="images/logo.svg" alt="logo">
+      <img src="src/assets/images/logo.svg" alt="logo">
     </header>
 
-    <img class="w-full h-72 object-cover object-left-top sm:h-96 lg:hidden" src="images/hero-mobile.jpg" alt="" width="375" height="250">
+    <img class="w-full h-72 object-cover object-left-top sm:h-96 lg:hidden" src="src/assets/images/hero-mobile.jpg" alt="" width="375" height="250">
   
-    <div class="max-w-md mx-auto space-y-5 text-center px-10 py-16 text-col-DER sm:max-w-lg sm:py-12 lg:space-y-7 lg:pt-28 xl:text-left xl:max-w-lg xl:px-0 xl:mx-0">
+    <div class="max-w-md mx-auto space-y-5 text-center px-10 py-16 text-col-DER sm:max-w-lg sm:py-10 lg:space-y-7 lg:pt-28 xl:text-left xl:max-w-lg xl:px-0 xl:mx-0">
       <h2 class="uppercase text-5xl tracking-[0.15em] font-light lg:text-6xl xl:text-7xl">We're <span class="text-col-DAR font-semibold">coming soon</span></h2>
       <p class="xl:text-lg">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
-      <div class="flex flex-col pt-4 xl:justify-start" id="message">
+      <div class="flex flex-col pt-4 xl:justify-start">
         <form class="h-12 flex rounded-full relative" id="form">
-          <input class="w-full bg-Linear1 border border-gray-200 rounded-full shadow-md shadow-gray-200 pl-6 placeholder-col-DER focus:outline-col-DER" type="text" placeholder="Email Address" id="email" name="email">
-          <button type="submit" class="absolute right-0 w-20 h-full flex items-center justify-center bg-Linear2 rounded-full shadow-gray-300 hover:shadow-lg hover:bg-Linear3 hover:scale-110">
-            <img src="images/icon-arrow.svg" alt="icon arrow">
+          <input class="w-full bg-Linear1 border border-gray-200 rounded-full shadow-md shadow-gray-200 pl-6 pr-24 placeholder-col-DER focus:outline-col-DER" type="text" placeholder="Email Address" id="email" name="email">
+          <button type="submit" title="Submit" class="absolute right-0 w-20 h-full flex items-center justify-center bg-Linear2 rounded-full shadow-gray-300 hover:shadow-lg hover:bg-Linear3 hover:scale-110">
+            <img src="src/assets/images/icon-arrow.svg" alt="icon arrow">
           </button>
         </form>
+        <p class="hidden pl-6 pt-3 text-left text-col-SR" id="messageEmpty">Please enter your email</p>
+        <p class="hidden pl-6 pt-3 text-left text-col-SR" id="messageError">Please provide a valid email</p>
       </div>
     </div>
     
   </main>
 
-  <img class="hidden basis-2/5 w-full h-auto object-cover object-left-top lg:block xl:basis-[45%] lxl:h-screen" src="images/hero-desktop.jpg" alt="Img hero Desktop" width="610" height="800">
+  <img class="hidden basis-2/5 w-full h-auto object-cover object-left-top lg:block xl:basis-[45%] lxl:h-screen" src="src/assets/images/hero-desktop.jpg" alt="Img hero Desktop" width="610" height="800">
 
   <script src="src/jquery-3.7.1.js"></script>
   <script src="src/scripts.js"></script>
