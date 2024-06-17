@@ -32,9 +32,14 @@
       <h2 class="uppercase text-5xl tracking-[0.15em] font-light lg:text-6xl xl:text-7xl">We're <span class="text-col-DAR font-semibold">coming soon</span></h2>
       <p class="xl:text-lg">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
-      <div class="flex flex-col pt-4 xl:justify-start">
+      <div class="flex flex-col pt-4">
         <form class="h-12 flex rounded-full relative" id="form">
           <input class="w-full bg-Linear1 border border-gray-200 rounded-full shadow-md shadow-gray-200 pl-6 pr-24 placeholder-col-DER focus:outline-col-DER" type="text" placeholder="Email Address" id="email" name="email">
+          
+          <div class="hidden items-center justify-center" id="iconError">
+            <img class="absolute right-[5.5rem]" src="src/assets/images/icon-error.svg" alt="Icon Error" width="16" height="20">
+          </div>
+
           <button type="submit" title="Submit" class="absolute right-0 w-20 h-full flex items-center justify-center bg-Linear2 rounded-full shadow-gray-300 hover:shadow-lg hover:bg-Linear3 hover:scale-110" id="btn">
             <img src="src/assets/images/icon-arrow.svg" alt="icon arrow">
           </button>

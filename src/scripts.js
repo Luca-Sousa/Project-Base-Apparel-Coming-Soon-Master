@@ -3,6 +3,7 @@ $(function(){
     var msgEmpty = $('#messageEmpty');
     var msgError = $('#messageError');
     var inputEmail = $('input[name=email]');
+    var iconError = $('#iconError');
 
     $('#email').focus(function(){
         if (msgEmpty.is(':visible') || msgError.is(':visible')) {
@@ -52,11 +53,13 @@ $(function(){
     });
 
     function applyFieldInvalid(el){
-        el.removeClass('border border-gray-200').addClass('border-2 border-col-SR');
+        el.removeClass('border border-gray-200 pr-24').addClass('border-2 border-col-SR pr-28');
+        iconError.removeClass('hidden').addClass('flex');
     }
 
     function resetInvalidField(el){
-        el.removeClass('border-2 border-col-SR').addClass('border border-gray-200').val('');
+        el.removeClass('border-2 border-col-SR pr-28').addClass('border border-gray-200 pr-24').val('');
+        iconError.removeClass('flex').addClass('hidden');
     }
     
 });
